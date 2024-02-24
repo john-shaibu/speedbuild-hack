@@ -43,7 +43,7 @@ export function StartScreen({ start }) {
           gap="2.5em"
         >
           <Heading color="#309894">Memory</Heading>
-          <Text color="#309894" fontWeight="600">
+          <Text color="#309894" fontWeight="400">
             Flip over tiles looking for pair
           </Text>
           <Button
@@ -53,6 +53,7 @@ export function StartScreen({ start }) {
             bgGradient="linear(to-t, #2d8282, #309894)"
             color="#ffffff"
             onClick={start}
+            cursor={pointer}
           >
             Play
           </Button>

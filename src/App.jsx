@@ -7,13 +7,17 @@ function App() {
 
   switch (gameState) {
     case "start":
-      return <StartScreen start={() => setGameState("play")} />;
-    case "play":
       return (
-        <PlayScreen end={() => setGameState("start")}>
-          <Box w="100%" />
-        </PlayScreen>
+        <>
+          <StartScreen start={() => setGameState("play")}></StartScreen>
+          <PlayScreen end={() => setGameState("start")}>
+            <Box w="100%" />
+          </PlayScreen>
+        </>
       );
+    case "play":
+      return;
+
     default:
       throw new Error("Invalid game state " + gameState);
   }
