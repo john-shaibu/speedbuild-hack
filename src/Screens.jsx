@@ -1,7 +1,7 @@
 import { useState } from "react";
 import confetti from "canvas-confetti";
 import * as icons from "react-icons/gi";
-import { Box, Container, Heading, Text, Button } from "@chakra-ui/react";
+import { Box, Container, Heading, Text, Button, Grid } from "@chakra-ui/react";
 
 import { Tile } from "./Tile";
 
@@ -53,7 +53,7 @@ export function StartScreen({ start }) {
             bgGradient="linear(to-t, #2d8282, #309894)"
             color="#ffffff"
             onClick={start}
-            cursor={pointer}
+            cursor={"pointer"}
           >
             Play
           </Button>
@@ -144,12 +144,14 @@ export function PlayScreen({ end }) {
 
   return (
     <>
-      <Box>
-        {getTiles(6).map((tile, i) => (
-          <Tile key={i} flip={() => flip(i)} {...tile} />
-        ))}
-      </Box>
-      {tryCount}
+      <Grid>
+        <Container>
+          {getTiles(6).map((tile, i) => (
+            <Tile key={i} flip={() => flip(i)} {...tile} />
+          ))}
+        </Container>
+        {tryCount}
+      </Grid>
     </>
   );
 }
