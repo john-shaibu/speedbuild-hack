@@ -1,7 +1,7 @@
 import { useState } from "react";
 import confetti from "canvas-confetti";
 import * as icons from "react-icons/gi";
-import { Box, Container, Heading, Text, Button, Grid } from "@chakra-ui/react";
+import { Box, Container, Heading, Text, Grid, Button } from "@chakra-ui/react";
 
 import { Tile } from "./Tile";
 
@@ -27,33 +27,38 @@ export function StartScreen({ start }) {
         alignItems="center"
         height="100vh"
         justifyContent="center"
+        padding="8px"
       >
         <Box
           backgroundColor="#e6fef9"
-          minHeight={"400px"}
-          minWidth={"400px"}
           maxWidth={"400px"}
           maxHeight={"400px"}
           borderRadius="16px"
-          padding="1em"
           display="flex"
           alignItems="center"
-          justifyContent="center"
           flexDirection="column"
           gap="2.5em"
+          width="100%"
+          height="100%"
+          paddingTop="76px"
         >
-          <Heading color="#309894">Memory</Heading>
-          <Text color="#309894" fontWeight="400">
-            Flip over tiles looking for pair
+          <Heading color="teal.500" fontSize="40px">
+            Memory
+          </Heading>
+
+          <Text color="teal.500" fontWeight="400" fontSize="18px">
+            Flip over tiles looking for pairs
           </Text>
           <Button
             variant="primary"
-            borderRadius="24px"
-            minWidth="100px"
-            bgGradient="linear(to-t, #2d8282, #309894)"
-            color="#ffffff"
-            onClick={start}
-            cursor={"pointer"}
+            rounded="full"
+            fontSize="20px"
+            px={"32px"}
+            py="24px"
+            bg="white"
+            color="white"
+            bgGradient="linear(to-b, teal.300, teal.500)"
+            minW="150px"
           >
             Play
           </Button>
@@ -148,19 +153,42 @@ export function PlayScreen({ end }) {
         <Container
           display={"flex"}
           flexDir="column"
-          gap={4}
+          gap={10}
           padding={0}
           maxWidth="fit-content"
+          height="max-content"
         >
-          <Box>{tryCount}</Box>
+          <Box
+            textAlign="center"
+            display="flex"
+            alignItems="center"
+            justifyContent="center"
+            gap={2}
+          >
+            <Text color="green.600" fontSize="14px" fontWeight="400">
+              Tries{" "}
+            </Text>
+            <Text
+              bg="#c6f6d6"
+              py="2px"
+              color="green.600"
+              borderRadius="4px"
+              lineHeight="16px"
+              padding="0px 8px"
+              fontSize="12px"
+              fontWeight={"600"}
+            >
+              {tryCount}
+            </Text>
+          </Box>
 
           <Grid
             gridTemplateColumns="repeat(4,1fr)"
-            gap={2}
+            gap={2.5}
             justifyContent="center"
             justifyItems="center"
-            padding={2}
-            bg="green.100"
+            padding={2.5}
+            bg="#effff3"
             rounded="16px"
           >
             {getTiles(16).map((tile, i) => (
@@ -171,9 +199,9 @@ export function PlayScreen({ end }) {
                 aspectRatio={1}
                 w="100%"
                 margin={0}
-                bg="green.500"
+                bg="#37a169"
                 color="white"
-                rounded="16px"
+                rounded="8px"
               />
             ))}
           </Grid>

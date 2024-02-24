@@ -6,23 +6,26 @@ export function Tile({ content: Content, flip, state }) {
       return (
         <Box
           onClick={flip}
-          display="inline-block"
-          width={8}
-          height={8}
+          display="inline-grid"
+          width={12}
+          height={12}
           textAlign="center"
-          bg="gray.500"
-        >
-          ?
-        </Box>
+          bg="green.300"
+          rounded="8px"
+          placeItems="cemter"
+        ></Box>
       );
     case "flipped":
       return (
         <Box
-          display="inline-block"
-          width={8}
-          height={8}
+          width={12}
+          height={12}
           textAlign="center"
-          bg="yellow.500"
+          bg="transparent"
+          color="white"
+          backgroundColor="green.600"
+          borderRadius="8px"
+          p="4px"
         >
           <Content
             style={{
@@ -38,10 +41,11 @@ export function Tile({ content: Content, flip, state }) {
       return (
         <Box
           display="inline-block"
-          width={8}
-          height={8}
+          width={12}
+          height={12}
           textAlign="center"
-          color="gray.300"
+          color="green.300"
+          p="4px"
         >
           <Content
             style={{
