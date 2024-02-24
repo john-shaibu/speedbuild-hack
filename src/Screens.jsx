@@ -1,7 +1,7 @@
 import { useState } from "react";
 import confetti from "canvas-confetti";
 import * as icons from "react-icons/gi";
-import { Box, Container, Grid } from "@chakra-ui/react";
+import { Box, Container, Heading, Text, Button } from "@chakra-ui/react";
 
 import { Tile } from "./Tile";
 
@@ -21,17 +21,43 @@ export const possibleTileContents = [
 export function StartScreen({ start }) {
   return (
     <>
-      <Grid h="200px" minHeight="100dvh" width="100%" placeItems="center">
-        <Container
-          bg="blue.600"
-          centerContent
-          backgroundColor="#effff3"
-          height="100%"
-          maxWidth="600px"
-          maxHeight="600px"
+      <Box
+        w="100%"
+        display="flex"
+        alignItems="center"
+        height="100vh"
+        justifyContent="center"
+      >
+        <Box
+          backgroundColor="#e6fef9"
+          minHeight={"400px"}
+          minWidth={"400px"}
+          maxWidth={"400px"}
+          maxHeight={"400px"}
           borderRadius="16px"
-        />
-      </Grid>
+          padding="1em"
+          display="flex"
+          alignItems="center"
+          justifyContent="center"
+          flexDirection="column"
+          gap="2.5em"
+        >
+          <Heading color="#309894">Memory</Heading>
+          <Text color="#309894" fontWeight="600">
+            Flip over tiles looking for pair
+          </Text>
+          <Button
+            variant="primary"
+            borderRadius="24px"
+            minWidth="100px"
+            bgGradient="linear(to-t, #2d8282, #309894)"
+            color="#ffffff"
+            onClick={start}
+          >
+            Play
+          </Button>
+        </Box>
+      </Box>
     </>
   );
 }
