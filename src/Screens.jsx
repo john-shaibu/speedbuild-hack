@@ -52,12 +52,12 @@ export function StartScreen({ start }) {
           <Button
             variant="primary"
             rounded="full"
-            fontSize="20px"
+            fontSize="24px"
             px={"32px"}
-            py="24px"
+            py="25px"
             bg="white"
             color="white"
-            bgGradient="linear(to-b, teal.300, teal.500)"
+            bgGradient="linear(to-b, teal.400, teal.600)"
             minW="150px"
           >
             Play
