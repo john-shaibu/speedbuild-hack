@@ -1,7 +1,8 @@
 import { useState } from "react";
 import confetti from "canvas-confetti";
 import * as icons from "react-icons/gi";
-import { Box, Button } from "@chakra-ui/react";
+import { Box, Container, Grid } from "@chakra-ui/react";
+
 import { Tile } from "./Tile";
 
 export const possibleTileContents = [
@@ -19,9 +20,19 @@ export const possibleTileContents = [
 
 export function StartScreen({ start }) {
   return (
-    <Box>
-      <Button onClick={start}>Play</Button>
-    </Box>
+    <>
+      <Grid h="200px" minHeight="100dvh" width="100%" placeItems="center">
+        <Container
+          bg="blue.600"
+          centerContent
+          backgroundColor="#effff3"
+          height="100%"
+          maxWidth="600px"
+          maxHeight="600px"
+          borderRadius="16px"
+        />
+      </Grid>
+    </>
   );
 }
 
