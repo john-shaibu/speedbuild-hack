@@ -144,13 +144,21 @@ export function PlayScreen({ end }) {
 
   return (
     <>
-      <Grid>
-        <Container>
-          {getTiles(6).map((tile, i) => (
-            <Tile key={i} flip={() => flip(i)} {...tile} />
-          ))}
+      <Grid minH="100dvh" placeItems="center">
+        <Container
+          display={"flex"}
+          flexDir="column"
+          gap={4}
+          maxWidth={"415px"}
+          padding={0}
+        >
+          <Grid>
+            {getTiles(16).map((tile, i) => (
+              <Tile key={i} flip={() => flip(i)} {...tile} />
+            ))}
+          </Grid>
+          {tryCount}
         </Container>
-        {tryCount}
       </Grid>
     </>
   );
