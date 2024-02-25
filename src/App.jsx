@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { StartScreen, PlayScreen } from "./Screens";
+import { StartScreen, PlayScreen } from "./Screens3";
 import { Box } from "@chakra-ui/react";
 
 function App() {
